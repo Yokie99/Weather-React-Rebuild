@@ -12,12 +12,12 @@ import { getLocationCoords } from '../Dataservice/dataservice'
 const MainWeatherComponent = () => {
 
 useEffect(() =>{
-    getLocationCoords()
+    // getLocationCoords()
 },[])
 
 
     return (
-        <div className='bg-blue-400 w-screen py-11'>
+        <div className='bg-blue-400 w-screen pt-[5rem] pb-12'>
             <div className='flex justify-between mx-16 pb-4'>
                 <div className=' text-3xl'>
                     <h1>Local Time:</h1>
@@ -29,7 +29,7 @@ useEffect(() =>{
                     <p className='text-3xl'>Mon, March 25, 2024</p>
                 </div>
 
-                <img src={star} alt="" />
+                <img className='object-contain' src={star} alt="" />
             </div>
 
             <div className='bg-white border-black border-solid border-[3px] mx-16'>
@@ -37,7 +37,7 @@ useEffect(() =>{
 
                     <div className='flex flex-col items-center justify-center'>
                         <h1 className='text-3xl'>sunny</h1>
-                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
+                        <img className='iconImage' src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
                     </div>
 
                     <div className='flex flex-col items-center justify-center'>
@@ -45,33 +45,33 @@ useEffect(() =>{
                         <p className='text-3xl'>Feels Like 64F</p>
                     </div>
 
-                    <div className='grid grid-rows-3'>
-                        <div className='flex justify-center align-middle items-center'>
+                    <div className='grid grid-rows-3 justify-center'>
+                        <div className='flex justify-between align-middle items-center max-w-48'>
                             <img className='pe-4' src={upBlock} alt="" />
                             <p>High: 69F</p>
                         </div>
-                        <div className='flex justify-center align-middle items-center'>
+                        <div className='flex justify-between align-middle items-center max-w-48'>
                             <img className='pe-4' src={downBlock} alt="" />
-                            <p>High: 69F</p>
+                            <p>Low: 69F</p>
                         </div>
-                        <div className='flex justify-center align-middle items-center'>
+                        <div className='flex justify-between align-middle items-center max-w-48'>
                             <img className='pe-4' src={water} alt="" />
-                            <p>High: 69F</p>
+                            <p>Humidity: 69F</p>
                         </div>
 
                     </div>
-                    <div className='grid grid-rows-3'>
-                        <div className='flex justify-center align-middle items-center'>
+                    <div className='grid grid-rows-3 justify-center'>
+                        <div className='flex justify-between align-middle items-center max-w-48'>
                             <img className='pe-4' src={wind} alt="" />
-                            <p>High: 69F</p>
+                            <p>Wind: 5.55mph</p>
                         </div>
-                        <div className='flex justify-center align-middle items-center'>
+                        <div className='flex justify-between align-middle items-center max-w-48'>
                             <img className='pe-4' src={up} alt="" />
-                            <p>High: 69F</p>
+                            <p>Sunrise: 7am</p>
                         </div>
-                        <div className='flex justify-center align-middle items-center'>
+                        <div className='flex justify-between align-middle items-center max-w-48'>
                             <img className='pe-4' src={down} alt="" />
-                            <p>High: 69F</p>
+                            <p>Sunset: 4pm</p>
                         </div>
 
                     </div>
