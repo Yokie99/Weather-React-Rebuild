@@ -10,14 +10,31 @@ export interface ILocation{
 
 
 
-interface Root {
-    cod: string;
-    message: number;
-    cnt: number;
-    list: List[];
-    city: City;
+export interface ICurrentWeather {
+  dt: number,
+    main: {
+      feels_like:number,
+      humidity: number,
+      temp:number,
+      temp_max:number,
+      temp_min:number
+    }
+    wind:{
+      speed:number
+    }
+    sys:{
+      sunrise:number
+      sunset:number
+    }
+    weather: Weather[]
+
   }
-  
+   interface Weather {
+    id: number;
+    main: string;
+    description: string;
+    icon: string;
+  }
   interface List {
     dt: number;
     main: Main;
@@ -43,12 +60,7 @@ interface Root {
     temp_kf: number;
   }
   
-  interface Weather {
-    id: number;
-    main: string;
-    description: string;
-    icon: string;
-  }
+ 
   
   interface Clouds {
     all: number;

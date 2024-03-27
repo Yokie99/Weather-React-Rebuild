@@ -9,11 +9,22 @@ import star from '../assets/star_unfilled.png'
 import { getLocationCoords } from '../Dataservice/dataservice'
 
 
-const MainWeatherComponent = () => {
+interface MainWeatherComponentProps{
+    desc: string,
+    feelsLike:number,
+    humidity:number,
+    temp:number,
+    tempMax:number,
+    tempMin:number,
+    windSpd:number,
+    icon: string,
+    sunrise:number,
+    sunset:number
 
-useEffect(() =>{
-    // getLocationCoords()
-},[])
+}
+
+const MainWeatherComponent = (props: MainWeatherComponentProps) => {
+
 
 
     return (
@@ -36,42 +47,42 @@ useEffect(() =>{
                 <div className='grid grid-cols-4 px-4 py-6'>
 
                     <div className='flex flex-col items-center justify-center'>
-                        <h1 className='text-3xl'>sunny</h1>
-                        <img className='iconImage' src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
+                        <h1 className='text-3xl'>{props.desc}</h1>
+                        <img className='iconImage' src={`https://openweathermap.org/img/wn/${props.icon}@2x.png`} alt="" />
                     </div>
 
                     <div className='flex flex-col items-center justify-center'>
-                        <p className=' text-8xl'>65 F</p>
-                        <p className='text-3xl'>Feels Like 64F</p>
+                        <p className=' text-8xl'>{props.temp}°F</p>
+                        <p className='text-3xl'>Feels Like {props.feelsLike}°F</p>
                     </div>
 
                     <div className='grid grid-rows-3 justify-center'>
                         <div className='flex justify-between align-middle items-center max-w-48'>
                             <img className='pe-4' src={upBlock} alt="" />
-                            <p>High: 69F</p>
+                            <p>High: {props.tempMax}°F</p>
                         </div>
                         <div className='flex justify-between align-middle items-center max-w-48'>
                             <img className='pe-4' src={downBlock} alt="" />
-                            <p>Low: 69F</p>
+                            <p>Low: {props.tempMin}°F</p>
                         </div>
                         <div className='flex justify-between align-middle items-center max-w-48'>
                             <img className='pe-4' src={water} alt="" />
-                            <p>Humidity: 69F</p>
+                            <p>Humidity: {props.humidity}</p>
                         </div>
 
                     </div>
                     <div className='grid grid-rows-3 justify-center'>
                         <div className='flex justify-between align-middle items-center max-w-48'>
                             <img className='pe-4' src={wind} alt="" />
-                            <p>Wind: 5.55mph</p>
+                            <p>Wind: {props.windSpd}mph</p>
                         </div>
                         <div className='flex justify-between align-middle items-center max-w-48'>
                             <img className='pe-4' src={up} alt="" />
-                            <p>Sunrise: 7am</p>
+                            <p>Sunrise: {props.sunrise}</p>
                         </div>
                         <div className='flex justify-between align-middle items-center max-w-48'>
                             <img className='pe-4' src={down} alt="" />
-                            <p>Sunset: 4pm</p>
+                            <p>Sunset: {props.sunset}</p>
                         </div>
 
                     </div>

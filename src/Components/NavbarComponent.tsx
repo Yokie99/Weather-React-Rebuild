@@ -2,8 +2,21 @@ import { Button, List } from "flowbite-react";
 import sun from "../assets/sun.png";
 import { useState } from "react";
 
-function NavbarComponent() {
+interface NavbarComponentProps{
+  keydown: React.Dispatch<React.SetStateAction<string>>
+}
+
+function NavbarComponent(props:NavbarComponentProps) {
   const [openFav, setOpenFav] = useState<boolean>(false);
+  const [inputValue, setInputValue] = useState<string>('');
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    // Check if the pressed key is 'Enter'
+    if (event.key === 'Enter') {
+      // Call your function here
+      props.keydown(inputValue)
+    }
+  };
 
   return (
     <>
@@ -19,6 +32,8 @@ function NavbarComponent() {
               className="w-full"
               type="text"
               placeholder="Search for a City"
+              onChange={(e) => setInputValue(e.target.value)}
+              onKeyDown={handleKeyDown}
             />
           </div>
 
