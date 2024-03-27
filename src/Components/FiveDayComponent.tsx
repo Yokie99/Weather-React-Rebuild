@@ -6,7 +6,7 @@ import sun from "../assets/sun.png";
 const FiveDayComponent = () => {
   return (
     <>
-      <div className="flex flex-col justify-center items-center border-black border-4 pt-10">
+      <div className="bg-white flex flex-col justify-center items-center border-black border-4 pt-10">
         <h1 className="text-4xl pb-5">Day of the week</h1>
         <img className="iconImage" src={sun} alt="" />
 
